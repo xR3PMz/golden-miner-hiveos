@@ -1,0 +1,4 @@
+#!/bin/bash
+MINER_PID=$(screen -ls | grep -E "\.$1" | grep -Ev "\.$1[a-z-]"| sed 's/\s\([0-9]*\)..*/\1/')
+
+[[ ! -z $MINER_PID ]]&& kill $MINER_PID
